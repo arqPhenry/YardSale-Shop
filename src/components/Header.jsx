@@ -13,10 +13,14 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
   const [toggleOrder, setToggleOrder] = useState(false);
-  const {state} = useContext(AppContext);
+  const {filterByCategory, state} = useContext(AppContext);
 
   const handleToggle = () =>{
     setToggle(!toggle);
+  }
+
+  const handleCategory = (categoria) =>{
+    filterByCategory(categoria);
   }
 
 
@@ -33,23 +37,23 @@ const Header = () => {
         <img src={logoYardSale} alt="logo" className="nav-logo"/>
 
         <ul>
-            <li>
-            <a href="/">All</a>
+            <li onClick={() => handleCategory("All")}>
+              <a href="#">All</a>
             </li>
-            <li>
-            <a href="/">Clothes</a>
+            <li onClick={() => handleCategory("Clothes")}>
+              <a href="#">Clothes</a>
             </li>
-            <li>
-            <a href="/">Electronics</a>
+            <li onClick={() => handleCategory("Electronics")}>
+              <a href="#">Electronics</a>
             </li>
-            <li>
-            <a href="/">Furnitures</a>
+            <li onClick={() => handleCategory("Furniture")}>
+              <a href="#">Furniture</a>
             </li>
-            <li>
-            <a href="/">Toys</a>
-            </li>
-            <li>
-            <a href="/">Others</a>
+            <li onClick={() => handleCategory("Shoes")}>
+              <a href="#">Shoes</a>
+            </li >
+            <li onClick={() => handleCategory("Others")}>
+              <a href="#">Others</a>
             </li>
         </ul>
         </div>

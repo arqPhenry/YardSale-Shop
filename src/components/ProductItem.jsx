@@ -18,7 +18,11 @@ const ProductItem = ({product}) => {
 
 	return (
 		<div className="ProductItem">
-			<img src={product.images[0]} alt="imagen" />
+			<div className='product-image'> 
+				<img src={product.images[0]} alt="imagen" />
+				<p>{product.category.name}</p>
+			</div>
+			
 			<div className="product-info">
 				<div>
 					<p>$ {product.price},00</p>

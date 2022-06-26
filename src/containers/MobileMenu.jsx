@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import AppContext from "@context/AppContext";
 import iconFlechita from '@icons/flechita.svg';
 import "@styles/MobileMenu.scss";
 
 const MobileMenu = ({setToggleMobileMenu}) => {
+  const {filterByCategory} = useContext(AppContext);
+
+  const handleCategory = (categoria) =>{
+    filterByCategory(categoria);
+    setToggleMobileMenu(false);
+  }
+
   return (
     <div className='MobileMenu'>
         <ul>
@@ -13,29 +21,29 @@ const MobileMenu = ({setToggleMobileMenu}) => {
 		</div>
         
       </li>
-      <li>
-        <a href="/">All</a>
-      </li>
-      <li>
-        <a href="/">Clothes</a>
-      </li>
-      <li>
-        <a href="/">Electronics</a>
-      </li>
-      <li>
-        <a href="/">Furnitures</a>
-      </li>
-      <li>
-        <a href="/">Toys</a>
-      </li>
-      <li>
-        <a href="/">Other</a>
-      </li>
+      <li onClick={() => handleCategory("All")}>
+              <a href="#">All</a>
+            </li>
+            <li onClick={() => handleCategory("Clothes")}>
+              <a href="#">Clothes</a>
+            </li>
+            <li onClick={() => handleCategory("Electronics")}>
+              <a href="#">Electronics</a>
+            </li>
+            <li onClick={() => handleCategory("Furniture")}>
+              <a href="#">Furniture</a>
+            </li>
+            <li onClick={() => handleCategory("Shoes")}>
+              <a href="#">Shoes</a>
+            </li >
+            <li onClick={() => handleCategory("Others")}>
+              <a href="#">Others</a>
+            </li>
     </ul>
 
     <ul>
       <li>
-        <a href="/#/my-orders">My orders</a>
+        <a href="/#/orders">My orders</a>
       </li>
       <li>
         <a href="/#/my-account">My account</a>

@@ -2,7 +2,8 @@ import { useState } from "react";
 
 const initialState = {
     cart: [],
-    total: 0
+    total: 0,
+    category: 'All'
 }
 
 const useInitialState = () => {
@@ -25,10 +26,18 @@ const useInitialState = () => {
                 cart: [...newArray],
                 total: state.total - payload.price
             })};
+        const filterByCategory = (categoria) => {
+            setState({
+                ...state,
+                category: categoria
+            })
+        };
+            
     return {
         state,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        filterByCategory
     }
 };
 
