@@ -24,7 +24,7 @@ const App = () => {
             <HashRouter>
                 <Layout>
                     <Routes>
-                        <Route exact path='#/' element={<Home/>}/>
+                        <Route exact path='/' element={<Home/>}/>
                         <Route exact path='#/login' element={<Login/>}/>
                         <Route exact path='#/register' element={<CreateAccount/>}/>
                         <Route exact path='#/password-recovery' element={<PasswordRecovery/>}/>
