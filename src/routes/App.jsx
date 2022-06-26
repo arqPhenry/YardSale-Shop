@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {HashRouter, Routes, Route} from 'react-router-dom';
 import '@styles/global.css';
 import Layout from '@containers/Layout.jsx';
 import Home from '@pages/Home.jsx';
@@ -21,22 +21,22 @@ const App = () => {
 
     return (
         <AppContext.Provider value={initialState}>
-            <BrowserRouter>
+            <HashRouter>
                 <Layout>
                     <Routes>
-                        <Route exact path='/' element={<Home/>}/>
-                        <Route exact path='/login' element={<Login/>}/>
-                        <Route exact path='/register' element={<CreateAccount/>}/>
-                        <Route exact path='/password-recovery' element={<PasswordRecovery/>}/>
-                        <Route exact path='/email-sent' element={<EmailSent/>}/>
-                        <Route exact path='/create-new-password' element={<CreateNewPassword/>}/>
-                        <Route exact path='/checkout' element={<Checkout/>}/>
-                        <Route exact path='/my-account' element={<MyAccount/>}/>
-                        <Route exact path='/orders' element={<Orders/>}/>
+                        <Route exact path='#/' element={<Home/>}/>
+                        <Route exact path='#/login' element={<Login/>}/>
+                        <Route exact path='#/register' element={<CreateAccount/>}/>
+                        <Route exact path='#/password-recovery' element={<PasswordRecovery/>}/>
+                        <Route exact path='#/email-sent' element={<EmailSent/>}/>
+                        <Route exact path='#/create-new-password' element={<CreateNewPassword/>}/>
+                        <Route exact path='#/checkout' element={<Checkout/>}/>
+                        <Route exact path='#/my-account' element={<MyAccount/>}/>
+                        <Route exact path='#/orders' element={<Orders/>}/>
                         <Route path='*' element={<NotFound/>}/>
                     </Routes>
                 </Layout>    
-            </BrowserRouter>
+            </HashRouter>
         </AppContext.Provider>
         
     );
