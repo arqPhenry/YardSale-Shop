@@ -1,0 +1,60 @@
+@use './vars';
+
+.OrderItem {
+	display: grid;
+	grid-template-columns: auto 1fr auto auto;
+	gap: 12px;
+	margin-bottom: 16px;
+	align-items: center;
+}
+.OrderItem figure {
+	margin: 0;
+	
+}
+.OrderItem figure img {
+	width: 70px;
+	height: 70px;
+	border-radius: 12px;
+	object-fit: cover;
+}
+.OrderItem p:nth-child(2) {
+	color: var(--very-light-pink);
+}
+.OrderItem p:nth-child(3) {
+	font-size: var(--md);
+	font-weight: bold;
+}
+.OrderItem .close{
+	height: 24px;
+	width: 24px;
+	border-radius: 6px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+@media (max-width: 640px) {
+	.OrderItem {
+		margin-bottom: 12px;
+	}
+	.OrderItem figure img {
+		width: 40px;
+		height: 40px;
+		border-radius: 12px;
+		object-fit: cover;
+		gap: 6px;
+	}
+	.OrderItem p:nth-child(2) {
+		font-size: var(--vsm);
+	}
+	.OrderItem p:nth-child(3) {
+		font-size: var(--sm);
+		font-weight: bold;
+	}
+}
+@media (hover: hover) {
+    .OrderItem .close:hover {
+		background-color: var(--text-input-field);
+    }
+}
+

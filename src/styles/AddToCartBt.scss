@@ -1,0 +1,39 @@
+@use 'vars';
+
+.product-info button {
+	margin: 0;
+	cursor: pointer;
+}
+.product-info button{
+	width: 35px;
+	height: 35px;
+	background: none;
+	border: none;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	
+	&:active{
+		opacity: 40%;
+	}
+	&:disabled :nth-child(1){
+		opacity: 20%;
+	}
+}
+
+.product-info button img{
+	width: 35px;
+	height: 35px;
+	margin: 0;
+	padding: 0;
+}
+.product-info button .added{
+	border: 1px solid var(--hospital-green);
+}
+@media (hover: hover) {
+	.product-info button:hover{
+		box-shadow: 0px 10px 25px -12px rgba(114,171,121,0.45);
+	}
+  }

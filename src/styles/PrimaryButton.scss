@@ -1,0 +1,30 @@
+@use "./vars";
+
+.primary-button {
+    background: linear-gradient(148deg, rgba(172,217,178,1) 0%, rgba(114,171,121,1) 100%);
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 50px;
+}
+
+.login-button {
+  margin-top: 14px;
+  margin-bottom: 30px;
+  box-shadow: 0px 10px 25px -12px rgba(114,171,121,0.45);
+
+  &:active{
+    box-shadow: none;
+    background: var(--hospital-green);
+  }
+}
+@media (hover: hover) {
+  .login-button:hover{
+    box-shadow: 0px 15px 40px -12px var(--hospital-shadow);
+    background: rgba(114,171,121,1);
+  }
+}
