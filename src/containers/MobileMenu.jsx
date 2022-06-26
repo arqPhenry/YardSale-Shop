@@ -35,10 +35,10 @@ const MobileMenu = ({setToggleMobileMenu}) => {
 
     <ul>
       <li>
-        <a href="/my-orders">My orders</a>
+        <a href="/#/my-orders">My orders</a>
       </li>
       <li>
-        <a href="/my-account">My account</a>
+        <a href="/#/my-account">My account</a>
       </li>
     </ul>
 
